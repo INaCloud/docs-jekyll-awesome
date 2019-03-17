@@ -1,6 +1,11 @@
 if [ "$1" == "watch" ]
 then
-    bundle exec jekyll serve
+    echo "===DEV==="
+    JEKYLL_ENV=development bundle exec jekyll serve
+elif [ "$1" == "watch-p" ]
+then
+    echo "===PROD==="
+    JEKYLL_ENV=production bundle exec jekyll serve
 else
     jekyll build
 fi
