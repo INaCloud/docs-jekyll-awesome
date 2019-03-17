@@ -1,0 +1,20 @@
+---
+#layout: default
+title: Staff
+
+#{{ author.url }}, author is custom collection set from _config.yml
+---
+
+<h1>{{ page.title }}</h1>
+
+<ul>
+    {% for author in site.blog_authors %}
+    <li>
+        <h2><a href="{{ author.url }}">{{ author.name }}[ {{ author.short_name }} ]</a></h2>
+        <h3>{{ author.position }}</h3>
+
+        <!-- use "markdownify" filter since the content is markdown, happens automatically when using {{ content }} -->
+        <p>{{ author.content | markdownify }}</p>
+    </li>
+    {% endfor %}
+</ul>

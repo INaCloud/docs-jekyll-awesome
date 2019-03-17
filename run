@@ -5,6 +5,9 @@ else
     jekyll build
 fi
 
+# install jekyll plugins(cmd):
+# bundle update
+
 
 
 

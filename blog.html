@@ -1,0 +1,21 @@
+---
+#layout: default
+title: Blog
+---
+<h1>Latest Posts</h1>
+
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <h2><a href="{{ post.url }}">Title: {{ post.title }}</a></h2>
+
+        <!-- assign from "site.blog_authors" because we want to have a "url" from blog_authors/ -->
+        {% assign author = site.blog_authors | where: 'short_name', post.author | first %}
+        {% if author %}
+        - <a href="{{ author.url }}">Author: {{ author.name }}</a>
+        {% endif %}
+
+        <p>{{ post.excerpt }}</p>
+    </li>
+    {% endfor %}
+</ul>
