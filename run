@@ -1,0 +1,10 @@
+if [ "$1" == "watch" ]
+then
+    bundle exec jekyll serve
+else
+    jekyll build
+fi
+
+
+
+
